@@ -1,4 +1,7 @@
 
+using CachimbitoSmoke.API.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace CachimbitoSmoke.API
 {
     public class Program
@@ -8,6 +11,11 @@ namespace CachimbitoSmoke.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<CachimbitoSmokeDbContext>(options =>
+            {
+                var connectionString = builder.Configuration.GetConnectionString("DefaultConnectio");
+                options.UseSqlServer(connectionString);
+            });
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
