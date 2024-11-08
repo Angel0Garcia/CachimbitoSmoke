@@ -13,7 +13,7 @@ namespace CachimbitoSmoke.API
             // Add services to the container.
             builder.Services.AddDbContext<CachimbitoSmokeDbContext>(options =>
             {
-                var connectionString = builder.Configuration.GetConnectionString("DefaultConnectio");
+                var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
                 options.UseSqlServer(connectionString);
             });
 

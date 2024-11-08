@@ -2,7 +2,7 @@
 
 namespace CachimbitoSmoke.API.Models
 {
-    public class Prodcuto
+    public class Producto
     {
         public int id { get; set; }
         public string name { get; set; }

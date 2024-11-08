@@ -30,7 +30,7 @@ namespace CachimbitoSmoke
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Prodcuto}/{action=Index}/{id?}");
 
             app.Run();
         }

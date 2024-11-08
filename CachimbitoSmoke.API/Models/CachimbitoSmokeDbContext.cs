@@ -4,17 +4,17 @@ namespace CachimbitoSmoke.API.Models
 {
     public class CachimbitoSmokeDbContext : DbContext
     {
-        CachimbitoSmokeDbContext(DbContextOptions<CachimbitoSmokeDbContext> options) : base(options) 
+        public CachimbitoSmokeDbContext(DbContextOptions<CachimbitoSmokeDbContext> options) : base(options) 
         {
         
         }
 
-        public DbSet<Prodcuto> Productos { get; set; }
+        public DbSet<Producto> Productos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Prodcuto>().HasIndex(c => c.name).IsUnique();
+            modelBuilder.Entity<Producto>().HasIndex(c => c.name).IsUnique();
         }
     }
 }
