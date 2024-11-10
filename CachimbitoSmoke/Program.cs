@@ -9,9 +9,10 @@ namespace CachimbitoSmoke
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddHttpClient();
+
             var app = builder.Build();
 
-            builder.Services.AddHttpClient();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -30,7 +31,7 @@ namespace CachimbitoSmoke
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Prodcuto}/{action=Index}/{id?}");
+                pattern: "{controller=Producto}/{action=Index}/{id?}");
 
             app.Run();
         }
